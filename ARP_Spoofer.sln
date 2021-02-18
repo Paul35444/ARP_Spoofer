@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ARP_Spoofer", "ARP_Spoofer.pyproj", "{F0E8EA3F-C991-4C7E-9800-D3404FCE7AAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0E8EA3F-C991-4C7E-9800-D3404FCE7AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0E8EA3F-C991-4C7E-9800-D3404FCE7AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EFAA9D66-C70A-4B22-A9D6-191A55F273DC}
+	EndGlobalSection
+EndGlobal
