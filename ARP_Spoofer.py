@@ -20,5 +20,6 @@ sent_packets_count = 0
 while True:
     spoof("10.0.0.1", "10.0.1.1")
     spoof("10.0.1.1", "10.0.0.1")
+    sent_packets_count = sent_packets_count + 2
     print("[+] Packets sent: " + str(sent_packets_count))
     time.sleep(2)
