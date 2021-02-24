@@ -19,4 +19,5 @@ def spoof(target_ip, spoof_ip):
 while True:
     spoof("10.0.0.1", "10.0.1.1")
     spoof("10.0.1.1", "10.0.0.1")
+    print("[+] Sent two packets")
     time.sleep(2)
