@@ -31,4 +31,5 @@ try:
         print("\r[+] Packets sent: " + str(sent_packets_count), end="")
         time.sleep(2)
 except KeyboardInterrupt:
-    print("[+] Detected CTRL + C Input... Quitting.")
+    print("[+] Detected CTRL + C Input... Resetting ARP tables... Please wait.\n")
+    restore("10.0.0.1", "10.0.1.1")
